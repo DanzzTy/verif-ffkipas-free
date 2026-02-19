@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DANZZ VERIF - SPESIAL RAMADHAN</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: white;
+}
+
+.container {
+    background: rgba(0,0,0,0.7);
+    padding: 25px;
+    width: 350px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0,255,255,0.5);
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+.profile {
+    margin-bottom: 15px;
+}
+
+.profile img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    border: 3px solid cyan;
+    margin-bottom: 10px;
+}
+
+h1 {
+    font-size: 20px;
+    color: #00ffff;
+}
+
+.ramadhan {
+    margin: 10px 0;
+    font-weight: bold;
+    color: gold;
+}
+
+.support {
+    font-size: 12px;
+    margin-bottom: 15px;
+    color: #ccc;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background: cyan;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: gold;
+    color: black;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="profile">
+        <img src="img/IMG-20260219-WA0009.jpg" alt="Profile">
+        <h1>DANZZ VERIF</h1>
+    </div>
+
+    <div class="ramadhan">
+        SPESIAL RAMADHAN 🕌
+    </div>
+
+    <div class="support">
+        Didukung oleh ffkipas
+    </div>
+
+    <input type="text" id="nama" placeholder="NAMA KAMU:" required>
+    <input type="text" id="idff" placeholder="ID FFKIPAS:" required>
+
+    <button onclick="kirim()">KIRIM</button>
+
+</div>
+
+<script>
+function kirim() {
+    var nama = document.getElementById("nama").value;
+    var idff = document.getElementById("idff").value;
+
+    if(nama === "" || idff === "") {
+        alert("Isi dulu semua datanya yaa 😅");
+        return;
+    }
+
+    var nomorAdmin = "6285707277941";
+    var pesan = `Halo admin, saya ${nama}, ID FFKIPAS ${idff}, mau verif gratis spesial ramadhan, mohon untuk segera diproses, terimakasih 🙏🏻`;
+
+    var url = `https://wa.me/${nomorAdmin}?text=${encodeURIComponent(pesan)}`;
+    window.location.href = url;
+}
+</script>
+
+</body>
+</html>
